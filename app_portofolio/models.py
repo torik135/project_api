@@ -14,7 +14,6 @@ class ProjectList(models.Model):
     ('BE', 'Back End'),
     ('FS', 'Full Stack'),
     ('PL', 'Plain / Native'),
-
   ]
 
   # project desc
