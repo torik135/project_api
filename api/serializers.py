@@ -8,7 +8,6 @@ class ProjectListSerializers(serializers.ModelSerializer):
     fields = '__all__'
 
   def get_project_type(self, obj):
-    print("THIS ------>", obj.project_type)
     if obj.project_type == 'FE':
       return 'Front End'
     elif obj.project_type == 'BE':

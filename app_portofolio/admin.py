@@ -3,7 +3,7 @@ from .models import TechChoices, ProjectList
 
 class ProjectListAdmin(admin.ModelAdmin):
   fieldsets = [
-    ('Project Detail', {'fields': ['project_name', 'author', 'project_desc']}),
+    ('Project Detail', {'fields': ['project_name', 'slug', 'author', 'project_desc']}),
     ('Project Link', {'fields': ['code', 'web_link', 'project_img']}),
     ('Project Tech', {'fields': ['tech', 'project_type']}),
   ]
@@ -13,6 +13,8 @@ class ProjectListAdmin(admin.ModelAdmin):
     'author',
     'project_type',
   )
+
+  prepopulated_fields = {'slug': ('project_name', )}
 
   search_fields = ['project_name', 'project_desc']
   list_filter = ['project_type', 'author']

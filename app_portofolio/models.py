@@ -21,6 +21,7 @@ class ProjectList(models.Model):
   author = models.CharField(max_length=50, default='torik135')
   project_desc = models.TextField(null=True, blank=True)
   project_img = models.URLField(max_length=255, null=True, blank=True)
+  slug = models.SlugField(max_length=50, unique=True, null=True)
 
   # project link
   code = models.URLField(max_length=250, null=True, blank=True)
