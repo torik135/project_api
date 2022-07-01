@@ -1,3 +1,38 @@
 from django.db import models
 
-# Create your models here.
+class TechChoices(models.Model):
+  tech_name = models.CharField(max_length=15, null=True, blank=True)
+  tech_desc = models.TextField(null=True, blank=True)
+
+  def __str__(self):
+    return self.tech_name
+
+
+class ProjectList(models.Model):
+  projectType = [
+    ('FE', 'Front End'),
+    ('BE', 'Back End'),
+    ('FS', 'Full Stack'),
+    ('PL', 'Plain / Native'),
+
+  ]
+
+  # project desc
+  project_name = models.CharField(max_length=50, null=True, blank=True)
+  author = models.CharField(max_length=50, default='torik135')
+  project_desc = models.TextField(null=True, blank=True)
+
+  # project link
+  code = models.CharField(max_length=250, null=True, blank=True)
+  web_link = models.TextField(null=True, blank=True)
+
+  # tech
+  tech = models.ManyToManyField(TechChoices)
+  project_type = models.CharField(max_length=150, choices=projectType, null=True, blank=True)
+
+  def __str__(self):
+    return "Project {} by {}".format(self.project_name, self.author)
+
+
+
+
