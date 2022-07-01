@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import TechChoices, ProjectList
 
+@admin.register(ProjectList)
 class ProjectListAdmin(admin.ModelAdmin):
   fieldsets = [
     ('Project Detail', {'fields': ['project_name', 'slug', 'author', 'project_desc']}),
@@ -19,13 +20,15 @@ class ProjectListAdmin(admin.ModelAdmin):
   search_fields = ['project_name', 'project_desc']
   list_filter = ['project_type', 'author']
 
+@admin.register(TechChoices)
 class TechChoicesAdmin(admin.ModelAdmin):
   list_display = (
     'tech_name',
     'tech_desc',
   )
 
+  prepopulated_fields = {'tech_slug': ('tech_name', )}
   search_fields = ['tech_name']
 
-admin.site.register(ProjectList, ProjectListAdmin)
-admin.site.register(TechChoices, TechChoicesAdmin)
+# admin.site.register(ProjectList, ProjectListAdmin)
+# admin.site.register(TechChoices, TechChoicesAdmin)

@@ -1,8 +1,9 @@
 from django.db import models
 
 class TechChoices(models.Model):
-  tech_name = models.CharField(max_length=15, null=True, blank=True, unique=True)
+  tech_name = models.CharField(max_length=15, unique=True)
   tech_desc = models.TextField(null=True, blank=True)
+  tech_slug = models.SlugField(max_length=15, primary_key=True, unique=True)
 
   def __str__(self):
     return self.tech_name
