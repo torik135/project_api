@@ -4,7 +4,7 @@ from .models import TechChoices, ProjectList
 class ProjectListAdmin(admin.ModelAdmin):
   fieldsets = [
     ('Project Detail', {'fields': ['project_name', 'author', 'project_desc']}),
-    ('Project Link', {'fields': ['code', 'web_link']}),
+    ('Project Link', {'fields': ['code', 'web_link', 'project_img']}),
     ('Project Tech', {'fields': ['tech', 'project_type']}),
   ]
 
