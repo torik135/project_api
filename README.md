@@ -14,24 +14,28 @@
 ``` bash
 pip3 install -r requirement.txt
 ```
+3. #### create .env file
+``` env
+DJANGO_SECRET_KEY=randomsecretekythatyouwant123
+```
 
-5. #### migration
+4. #### migration
 ```bash
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-6. #### create super user
+5. #### create super user
 ```bash
 python3 manage.py createsuperuser
 ```
 
-5. #### run server
+6. #### run server
 ```bash
 python3 manage.py runserver
 ```
 
-6. #### create data
+7. #### create data
 
 ## End point
 ### All Projects
