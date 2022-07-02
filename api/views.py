@@ -30,5 +30,9 @@ def getTech(req):
   tech_serializers = TechChoicesSerializers(tech_query, many=True)
   return Response(tech_serializers.data)
 
-# def getTechBySlug(req, project_id):
+@api_view(['GET'])
+def getTechBySlug(req, tech_slug):
+  tech_slug_query = TechChoices.objects.get(tech_slug=tech_slug)
+  tech_slug_serializers = TechChoicesSerializers(tech_slug_query, many=False)
+  return Response(tech_slug_serializers.data)
 

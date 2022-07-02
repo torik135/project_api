@@ -1,5 +1,11 @@
 from django.urls import path
-from .views import getProject, getTech, getProjectBySlug
+from .views import (
+  getProject, 
+  getProjectBySlug, 
+
+  getTech,
+  getTechBySlug,
+  )
 
 urlpatterns = [
   # PROJECTS
@@ -8,5 +14,5 @@ urlpatterns = [
   # path('projects/<int:id>/', getProjectById),
   # TECH
   path('tech/all/', getTech),
-  # path('tech/<str:slug>/', getTechBySlug),
+  path('tech/<slug:tech_slug>/', getTechBySlug),
 ]
