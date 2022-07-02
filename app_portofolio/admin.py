@@ -29,6 +29,3 @@ class TechChoicesAdmin(admin.ModelAdmin):
 
   prepopulated_fields = {'tech_slug': ('tech_name', )}
   search_fields = ['tech_name']
-
-# admin.site.register(ProjectList, ProjectListAdmin)
-# admin.site.register(TechChoices, TechChoicesAdmin)

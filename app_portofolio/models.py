@@ -10,7 +10,7 @@ class TechChoices(models.Model):
 
 
 class ProjectList(models.Model):
-  projectType = [
+  project_types = [
     ('FE', 'Front End'),
     ('BE', 'Back End'),
     ('FS', 'Full Stack'),
@@ -30,7 +30,7 @@ class ProjectList(models.Model):
 
   # tech
   tech = models.ManyToManyField(TechChoices)
-  project_type = models.CharField(max_length=150, choices=projectType, null=True, blank=True)
+  project_type = models.CharField(max_length=150, choices=project_types, null=True, blank=True)
 
   def __str__(self):
     return "Project {} by {}".format(self.project_name, self.author)

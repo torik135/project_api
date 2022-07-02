@@ -16,14 +16,6 @@ def getProjectBySlug(req, slug):
   project_slug_serializers = ProjectListSerializers(project_slug_query, many=False)
   return Response(project_slug_serializers.data)
 
-
-# Query err <----ERROR
-# @api_view(['GET'])
-# def getProjectById(req, id):
-#   project_id_query = ProjectList.objects.filter(pk=id).get()
-#   project_id_serializers = ProjectListSerializers(project_id_query, many=False)
-#   return Response(project_id_serializers.data)
-
 @api_view(['GET'])
 def getTech(req):
   tech_query = TechChoices.objects.all()
