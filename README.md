@@ -39,15 +39,15 @@ python3 manage.py runserver
 
 ## End point
 ### All Projects
-localhost:8000/api/v1/projects/all/
+- localhost:8000/api/v1/projects/all/
 ### Project by slug
-localhost:8000/api/v1/projects/slug-project/
+- localhost:8000/api/v1/projects/slug-project/
 ### Project by project-type
-localhost:8000/api/v1/projects/FE/
-localhost:8000/api/v1/projects/BE/
-localhost:8000/api/v1/projects/FS/
-localhost:8000/api/v1/projects/PL/
+- localhost:8000/api/v1/projects/FE/
+- localhost:8000/api/v1/projects/BE/
+- localhost:8000/api/v1/projects/FS/
+- localhost:8000/api/v1/projects/PL/
 ### All Tech
-localhost:8000/api/v1/tech/all/
+- localhost:8000/api/v1/tech/all/
 ### Tech by slug
-localhost:8000/api/v1/tech/slug-tech/
+- localhost:8000/api/v1/tech/slug-tech/
