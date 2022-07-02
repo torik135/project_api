@@ -1,8 +1,8 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from app_portofolio.models import ProjectList
-from .serializers import ProjectListSerializers
+from app_portofolio.models import ProjectList, TechChoices
+from .serializers import ProjectListSerializers, TechChoicesSerializers
 
 @api_view(['GET'])
 def getProject(req):
@@ -10,3 +10,8 @@ def getProject(req):
   project_serializers = ProjectListSerializers(project_query, many=True)
   return Response(project_serializers.data)
 
+@api_view(['GET'])
+def getTech(req):
+  tech_query = TechChoices.objects.all()
+  tech_serializers = TechChoicesSerializers(tech_query, many=True)
+  return Response(tech_serializers.data)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from app_portofolio.models import ProjectList
+from app_portofolio.models import ProjectList, TechChoices
 
 class ProjectListSerializers(serializers.ModelSerializer):
   project_type = serializers.SerializerMethodField()
@@ -17,3 +17,8 @@ class ProjectListSerializers(serializers.ModelSerializer):
     elif obj.project_type == 'PL':
       return 'Plain / Native'
     else: return 'NULL'
+
+class TechChoicesSerializers(serializers.ModelSerializer):
+  class Meta:
+    model = TechChoices
+    fields = '__all__'
